@@ -1,0 +1,101 @@
+
+body {
+  background: #0f1724;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+.search-box {
+  margin-top: 10px;
+}
+
+
+input {
+  padding: 8px;
+  width: 250px;
+  border: none;
+  border-radius: 6px;
+}
+
+button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+
+h2,
+h3 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+.movie-grid,
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+
+.movie-card {
+  background: #1e293b;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.movie-card button {
+  margin: 3px;
+  font-size: 12px;
+}
+
+
+.lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.list {
+  background: #1e293b;
+  flex: 1;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 300px;
+}
+
+.share-box {
+  text-align: center;
+  margin: 20px;
+}
