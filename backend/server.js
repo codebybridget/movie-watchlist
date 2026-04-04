@@ -5,7 +5,16 @@ require("dotenv").config();
 
 const app = express();
 
-app.use(cors());
+// ✅ FIXED CORS (VERY IMPORTANT)
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://movie-watchlist-frontend-jh8s.onrender.com"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // ROUTES
@@ -16,5 +25,7 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
-// START SERVER
-app.listen(5000, () => console.log("Server running on port 5000"));
+// ✅ FIXED PORT (IMPORTANT FOR RENDER)
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
